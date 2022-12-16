@@ -170,7 +170,7 @@ variable "cpu_share_count" {
 variable "ram_size" {
   description = "VM RAM size in megabytes."
   type        = list(number)
-  default     = 4096
+  # default     = 4096
 }
 
 variable "dc" {
@@ -257,7 +257,7 @@ variable "efi_secure_boot" {
 variable "num_cores_per_socket" {
   description = "The number of cores to distribute among the CPUs in this virtual machine. If specified, the value supplied to num_cpus must be evenly divisible by this value."
   type        = number
-  default     = 1
+  # default     = 1
 }
 
 variable "cpu_hot_add_enabled" {
