@@ -147,7 +147,7 @@ variable "instances" {
 variable "cpu_number" {
   description = "number of CPU (core per CPU) for the VM."
   type        = list(number)
-  default     = 2
+  # default     = 2
 }
 
 variable "cpu_reservation" {
