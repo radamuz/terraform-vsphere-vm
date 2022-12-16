@@ -95,7 +95,7 @@ resource "vsphere_virtual_machine" "vm" {
   datastore_cluster_id = var.datastore_cluster != "" ? data.vsphere_datastore_cluster.datastore_cluster[0].id : null
   datastore_id         = var.datastore != "" ? data.vsphere_datastore.datastore[0].id : null
 
-  num_cpus               = var.cpu_number[count.index]
+  num_cpus               = element(var.cpu_number, count.index)
   num_cores_per_socket   = var.num_cores_per_socket
   cpu_hot_add_enabled    = var.cpu_hot_add_enabled
   cpu_hot_remove_enabled = var.cpu_hot_remove_enabled
@@ -103,7 +103,7 @@ resource "vsphere_virtual_machine" "vm" {
   cpu_share_level        = var.cpu_share_level
   cpu_share_count        = var.cpu_share_level == "custom" ? var.cpu_share_count : null
   memory_reservation     = var.memory_reservation
-  memory                 = var.ram_size[count.index]
+  memory                 = element(var.ram_size, count.index)
   memory_hot_add_enabled = var.memory_hot_add_enabled
   memory_share_level     = var.memory_share_level
   memory_share_count     = var.memory_share_level == "custom" ? var.memory_share_count : null
