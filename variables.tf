@@ -146,6 +146,7 @@ variable "instances" {
 
 variable "cpu_number" {
   description = "number of CPU (core per CPU) for the VM."
+  type        = list(number)
   default     = 2
 }
 
@@ -168,6 +169,7 @@ variable "cpu_share_count" {
 
 variable "ram_size" {
   description = "VM RAM size in megabytes."
+  type        = list(number)
   default     = 4096
 }
 
